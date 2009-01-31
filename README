@@ -1,2 +1,32 @@
 
-test
+gmetric-daemon is my attempt at a forking standalone daemon
+for ganglia users that want to write additional metric monitors
+in Python. 
+
+Perhaps this project isn't need if using the gmond python module interface.
+I wanted a multithreaded approach to monitoring... but it turns out
+that Python threads really suck. So I made this a forking daemon.
+One process per module. Not very memory effecient. But then I don't
+expect to need many modules. Perhaps ThreadedPython could be used
+since it doesn't suffer from the GIL.
+
+I'm hoping that this will make it easier to write
+metric modules for things like database monitoring.
+
+
+David Stainton
+
+Copyright 2009 Tailrank, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy
+of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under
+the License.
+
