@@ -17,6 +17,8 @@
 #
 
 __author__ = "David Stainton"
+__copyright__ = "Copyright 2009 Tailrank, Inc."
+__license__ = "Apache License"
 
 
 import re
