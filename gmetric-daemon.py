@@ -34,7 +34,7 @@ pid_list = []
 
 def ganglia_report_value(metric_name, value, type, units):
    gangliaMetric = gmetric_path + " --name=" + metric_name + " --value=" + str(value) + " --type=" + type + " --units=" + units
-   #print(gangliaMetric)
+   print(gangliaMetric)
    res = os.system(gangliaMetric)
 
 
@@ -55,8 +55,10 @@ def forkModule(time_max, run):
          end_t = time.time()
          duration = end_t - start_t
 
-         for name,value,type,units in metrics:
-            ganglia_report_value(name, value)
+         for metric in metrics:
+
+            name, value, type, units = metric
+            ganglia_report_value(name, value, type, units)
 
 
       # have i got this right?
@@ -91,7 +93,6 @@ def run_modules(module_dir):
          continue
 
       module_name = module_name.split('.')[0]
-      print "importing %s" % module_name
       module = __import__(module_name)
       print module
       forkModule(module.time_max, module.run)
