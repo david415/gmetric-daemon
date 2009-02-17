@@ -1,0 +1,27 @@
+
+collection_group {
+  collect_every = 120
+  time_threshold = 180
+  metric {
+    value_threshold = 1.0
+    name = "mysql_fs-wps"
+    title = "mysql_fs-wps"
+ }
+  metric {
+    value_threshold = 1.0
+    name = "mysql_fs-rps"
+    title = "mysql_fs-rps"
+ }
+ metric {
+    value_threshold = 1.0
+    name = "root_fs-wps"
+    title = "root_fs-wps"
+ }
+  metric {
+    value_threshold = 1.0
+    name = "root_fs-rps"
+    title = "root_fs-rps"
+  }
+}
+
+
